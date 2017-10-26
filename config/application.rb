@@ -18,9 +18,12 @@ Bundler.require(*Rails.groups)
 
 module NesDemoDb
   class Application < Rails::Application
-    # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
-    config.secret_key_base = ENV[SECRET_KEY_BASE]
     config.api_only = true
+    config.generators.system_tests = nil
+    config.action_controller.permit_all_parameters = true
+    config.secret_key_base = ENV["SECRET_KEY_BASE"]
+
+    config.eager_load_paths << "#{Rails.root}/lib"
   end
 end
