@@ -46,6 +46,6 @@ class AvailabilitiesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def availability_params
-      params.require(:availability).permit(:name, :prefered_hours, :sunday, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday)
+      params.require(:availability).permit(:name, :prefered_hours, {:sunday => [], :monday => [], :tuesday => [], :wednesday => [], :thursday => [], :friday => [], :saturday => []})
     end
 end
