@@ -59,3 +59,15 @@ Availability.create!(
 )
 
 puts "availabilities created"
+
+10.times do |j|
+  Schedule.create!(
+    name: "James #{j}",
+    start_time: j + 1,
+    end_time: j + 9,
+    day: "monday",
+    date: Date.today
+  )
+end
+
+puts "JAMES IS HERE"
